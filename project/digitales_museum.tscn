@@ -1,0 +1,599 @@
+[gd_scene load_steps=40 format=3 uid="uid://kcbdj8ww58f2"]
+
+[ext_resource type="PackedScene" uid="uid://bjw7kpcwkoyp1" path="res://player.tscn" id="1_7tx51"]
+[ext_resource type="Texture2D" uid="uid://c5k2o5hwxp6e5" path="res://skytexture.jpg" id="2_hm31d"]
+[ext_resource type="Texture2D" uid="uid://mmpr0ju1d5l0" path="res://Flag_of_Germany.svg" id="3_8y01a"]
+[ext_resource type="PackedScene" uid="uid://02h8ibcgujyp" path="res://gemälde_01.tscn" id="3_82e4p"]
+[ext_resource type="PackedScene" uid="uid://ddje3h6dr7lgg" path="res://schildPolitisch.tscn" id="4_6u78v"]
+[ext_resource type="PackedScene" uid="uid://d3c2or6spn05l" path="res://gemälde_02.tscn" id="4_nobm7"]
+[ext_resource type="PackedScene" uid="uid://b8dn2k2e7cjfe" path="res://gemälde_03.tscn" id="5_j2q2n"]
+[ext_resource type="PackedScene" uid="uid://dp7n52h7tvmqu" path="res://schildSozial.tscn" id="5_t0buc"]
+[ext_resource type="PackedScene" uid="uid://bty3pybugfnfj" path="res://schildWirtschaftlich.tscn" id="9_kax1e"]
+[ext_resource type="PackedScene" uid="uid://c11dgfp7j8bhu" path="res://schildEingang.tscn" id="10_mhygb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7n7jv"]
+emission = Color(1, 1, 1, 1)
+emission_intensity = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_nifoh"]
+lightmap_size_hint = Vector2i(52, 252)
+material = SubResource("StandardMaterial3D_7n7jv")
+add_uv2 = true
+size = Vector2(10, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bnkk5"]
+size = Vector3(10, 1, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8akjd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ukpp2"]
+material = SubResource("StandardMaterial3D_8akjd")
+size = Vector3(5, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_btat4"]
+size = Vector3(5, 1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7r0dd"]
+material = SubResource("StandardMaterial3D_8akjd")
+size = Vector3(5, 1, 10)
+
+[sub_resource type="QuadMesh" id="QuadMesh_xdvwg"]
+lightmap_size_hint = Vector2i(52, 52)
+material = SubResource("StandardMaterial3D_7n7jv")
+add_uv2 = true
+size = Vector2(10, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b8gmn"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_buwac"]
+
+[sub_resource type="Sky" id="Sky_844ey"]
+sky_material = SubResource("ProceduralSkyMaterial_buwac")
+
+[sub_resource type="Environment" id="Environment_154rv"]
+background_mode = 2
+background_color = Color(0.942823, 0.942823, 0.942823, 1)
+background_intensity = 1.0
+sky = SubResource("Sky_844ey")
+sdfgi_use_occlusion = true
+glow_enabled = true
+glow_hdr_threshold = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grcip"]
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("2_hm31d")
+metallic = 1.0
+emission_enabled = true
+emission_intensity = 4.0
+emission_texture = ExtResource("2_hm31d")
+uv1_scale = Vector3(6.541, 45.141, 35.986)
+uv1_offset = Vector3(13.885, 0.47, 0)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1fn77"]
+material = SubResource("StandardMaterial3D_grcip")
+flip_faces = true
+height = 6.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1v0y3"]
+albedo_color = Color(0.783523, 0.783523, 0.783523, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xh3mm"]
+material = SubResource("StandardMaterial3D_1v0y3")
+top_radius = 0.1
+bottom_radius = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccydf"]
+albedo_color = Color(0.783523, 0.783523, 0.783523, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_q61oj"]
+material = SubResource("StandardMaterial3D_ccydf")
+top_radius = 0.25
+bottom_radius = 0.25
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ys5mo"]
+albedo_color = Color(0.783523, 0.783523, 0.783523, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gggmn"]
+material = SubResource("StandardMaterial3D_ys5mo")
+top_radius = 0.13
+bottom_radius = 0.25
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_024xx"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_s43e0"]
+material = SubResource("StandardMaterial3D_024xx")
+radius = 0.25
+height = 0.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gerr0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h56mu"]
+albedo_texture = ExtResource("3_8y01a")
+uv1_scale = Vector3(1, -1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8p4o3"]
+material = SubResource("StandardMaterial3D_h56mu")
+size = Vector2(0.4, 0.24)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xi8mh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_u2lkk"]
+material = SubResource("StandardMaterial3D_xi8mh")
+size = Vector3(5, 4, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6c5c"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ku55b"]
+material = SubResource("StandardMaterial3D_e6c5c")
+
+[node name="DigitalesMuseum" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_7tx51")]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0.000555038, -1.98499, -5.05104)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 15)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_nifoh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_bnkk5")
+
+[node name="CharacterBody3D5" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5, 2, 10)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_ukpp2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_btat4")
+
+[node name="CharacterBody3D7" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5, 2, 10)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_7r0dd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_btat4")
+
+[node name="CharacterBody3D6" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.31134e-07, -1, 0, 1, 1.31134e-07, 0, 2, -10)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D6"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+gi_mode = 2
+mesh = SubResource("QuadMesh_xdvwg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_b8gmn")
+
+[node name="CharacterBody3D8" type="CharacterBody3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 1.14641e-14, 0, 1.31134e-07, -1, -8.74228e-08, -1, -1.31134e-07, 0, 2, 40)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D8"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+gi_mode = 2
+mesh = SubResource("QuadMesh_xdvwg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_b8gmn")
+
+[node name="CharacterBody3D3" type="CharacterBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -5, 2, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 15)
+mesh = SubResource("QuadMesh_nifoh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 15)
+shape = SubResource("BoxShape3D_bnkk5")
+
+[node name="CharacterBody3D4" type="CharacterBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 5, 2, 15)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_nifoh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_bnkk5")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_154rv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.936678, -0.106347, 0.333653, 0, 0.952773, 0.303684, -0.350191, -0.284454, 0.892442, 0, 0, 0)
+light_intensity_lux = 2.0
+light_bake_mode = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(14.9138, 0, 0, 0, -6.26422e-07, 8.50889, 0, -14.3309, -3.71936e-07, -0.027722, 0.0769789, 0.0050354)
+mesh = SubResource("CylinderMesh_1fn77")
+
+[node name="Lamp" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.861, -2, 8.383)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lamp"]
+mesh = SubResource("CylinderMesh_xh3mm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_q61oj")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Lamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.881306, 0)
+mesh = SubResource("CylinderMesh_gggmn")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Lamp"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1.11869, -5.18826e-09)
+mesh = SubResource("CylinderMesh_q61oj")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Lamp"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1, 5.18826e-09)
+mesh = SubResource("CylinderMesh_gggmn")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Lamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42329, 0)
+mesh = SubResource("SphereMesh_s43e0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50571, 0)
+light_intensity_lumens = 12.0
+omni_range = 9.70991
+omni_attenuation = 0.105112
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lamp"]
+shape = SubResource("CylinderShape3D_gerr0")
+
+[node name="Lamp5" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.861, -2, 17.383)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lamp5"]
+mesh = SubResource("CylinderMesh_xh3mm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lamp5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_q61oj")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Lamp5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.881306, 0)
+mesh = SubResource("CylinderMesh_gggmn")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Lamp5"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1.11869, -5.18826e-09)
+mesh = SubResource("CylinderMesh_q61oj")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Lamp5"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1, 5.18826e-09)
+mesh = SubResource("CylinderMesh_gggmn")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Lamp5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42329, 0)
+mesh = SubResource("SphereMesh_s43e0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50571, 0)
+light_intensity_lumens = 12.0
+omni_range = 9.70991
+omni_attenuation = 0.105112
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lamp5"]
+shape = SubResource("CylinderShape3D_gerr0")
+
+[node name="Lamp6" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.139, -2, 17.383)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lamp6"]
+mesh = SubResource("CylinderMesh_xh3mm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lamp6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_q61oj")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Lamp6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.881306, 0)
+mesh = SubResource("CylinderMesh_gggmn")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Lamp6"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1.11869, -5.18826e-09)
+mesh = SubResource("CylinderMesh_q61oj")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Lamp6"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1, 5.18826e-09)
+mesh = SubResource("CylinderMesh_gggmn")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Lamp6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42329, 0)
+mesh = SubResource("SphereMesh_s43e0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50571, 0)
+light_intensity_lumens = 12.0
+omni_range = 9.70991
+omni_attenuation = 0.105112
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lamp6"]
+shape = SubResource("CylinderShape3D_gerr0")
+
+[node name="Lamp7" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.139, -2, 34.383)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lamp7"]
+mesh = SubResource("CylinderMesh_xh3mm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lamp7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_q61oj")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Lamp7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.881306, 0)
+mesh = SubResource("CylinderMesh_gggmn")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Lamp7"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1.11869, -5.18826e-09)
+mesh = SubResource("CylinderMesh_q61oj")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Lamp7"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1, 5.18826e-09)
+mesh = SubResource("CylinderMesh_gggmn")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Lamp7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42329, 0)
+mesh = SubResource("SphereMesh_s43e0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50571, 0)
+light_intensity_lumens = 12.0
+omni_range = 9.70991
+omni_attenuation = 0.105112
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lamp7"]
+shape = SubResource("CylinderShape3D_gerr0")
+
+[node name="Lamp8" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.861, -2, 34.383)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lamp8"]
+mesh = SubResource("CylinderMesh_xh3mm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lamp8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_q61oj")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Lamp8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.881306, 0)
+mesh = SubResource("CylinderMesh_gggmn")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Lamp8"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1.11869, -5.18826e-09)
+mesh = SubResource("CylinderMesh_q61oj")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Lamp8"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1, 5.18826e-09)
+mesh = SubResource("CylinderMesh_gggmn")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Lamp8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42329, 0)
+mesh = SubResource("SphereMesh_s43e0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50571, 0)
+light_intensity_lumens = 12.0
+omni_range = 9.70991
+omni_attenuation = 0.105112
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lamp8"]
+shape = SubResource("CylinderShape3D_gerr0")
+
+[node name="emblem" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.139, -2, 24.383)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="emblem"]
+shape = SubResource("CylinderShape3D_gerr0")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="emblem"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.692852, 0)
+mesh = SubResource("PlaneMesh_8p4o3")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="emblem"]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 0.692852, 0)
+mesh = SubResource("PlaneMesh_8p4o3")
+
+[node name="Node3D" type="Node3D" parent="emblem"]
+transform = Transform3D(1, 0, 0, 0, 0.650256, 0, 0, 0, 1, 0, -0.28404, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="emblem/Node3D"]
+mesh = SubResource("CylinderMesh_xh3mm")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="emblem/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_q61oj")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="emblem/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.881306, 0)
+mesh = SubResource("CylinderMesh_gggmn")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="emblem/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1.11869, 0)
+mesh = SubResource("CylinderMesh_q61oj")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="emblem/Node3D"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1, 0)
+mesh = SubResource("CylinderMesh_gggmn")
+skeleton = NodePath("../..")
+
+[node name="Lamp3" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.861, -2, -8.87408)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lamp3"]
+mesh = SubResource("CylinderMesh_xh3mm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lamp3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_q61oj")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Lamp3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.881306, 0)
+mesh = SubResource("CylinderMesh_gggmn")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Lamp3"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1.11869, -5.18826e-09)
+mesh = SubResource("CylinderMesh_q61oj")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Lamp3"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1, 5.18826e-09)
+mesh = SubResource("CylinderMesh_gggmn")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Lamp3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42329, 0)
+mesh = SubResource("SphereMesh_s43e0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50571, 0)
+light_intensity_lumens = 12.0
+omni_range = 9.70991
+omni_attenuation = 0.105112
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lamp3"]
+shape = SubResource("CylinderShape3D_gerr0")
+
+[node name="Lamp2" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.139, -2, 8.383)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lamp2"]
+mesh = SubResource("CylinderMesh_xh3mm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lamp2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_q61oj")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Lamp2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.881306, 0)
+mesh = SubResource("CylinderMesh_gggmn")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Lamp2"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1.11869, -5.18826e-09)
+mesh = SubResource("CylinderMesh_q61oj")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Lamp2"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1, 5.18826e-09)
+mesh = SubResource("CylinderMesh_gggmn")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Lamp2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42329, 0)
+mesh = SubResource("SphereMesh_s43e0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50571, 0)
+light_intensity_lumens = 12.0
+omni_range = 9.70991
+omni_attenuation = 0.105112
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lamp2"]
+shape = SubResource("CylinderShape3D_gerr0")
+
+[node name="Lamp4" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.139, -2, -8.874)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lamp4"]
+mesh = SubResource("CylinderMesh_xh3mm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lamp4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+mesh = SubResource("CylinderMesh_q61oj")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Lamp4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.881306, 0)
+mesh = SubResource("CylinderMesh_gggmn")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Lamp4"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1.11869, -5.18826e-09)
+mesh = SubResource("CylinderMesh_q61oj")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Lamp4"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 1, 5.18826e-09)
+mesh = SubResource("CylinderMesh_gggmn")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Lamp4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42329, 0)
+mesh = SubResource("SphereMesh_s43e0")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamp4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50571, 0)
+light_intensity_lumens = 12.0
+omni_range = 9.70991
+omni_attenuation = 0.105112
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lamp4"]
+shape = SubResource("CylinderShape3D_gerr0")
+
+[node name="Archway" type="Node3D" parent="."]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Archway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 10.5)
+mesh = SubResource("BoxMesh_u2lkk")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Archway"]
+transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 2.52897, 2.24024, 10.5)
+mesh = SubResource("BoxMesh_ku55b")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Archway"]
+transform = Transform3D(0.864219, -0.503115, 0.000919015, 0.503115, 0.864216, -0.00221827, 0.000321808, 0.00237944, 0.999997, 2.94627, 1.70434, 10.5)
+mesh = SubResource("BoxMesh_ku55b")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Archway"]
+transform = Transform3D(-0.866025, -0.5, 0, 0.5, -0.866025, 0, 0, 0, 1, -2.79722, 2.0385, 10.5)
+mesh = SubResource("BoxMesh_ku55b")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Archway"]
+transform = Transform3D(-0.503115, -0.864217, 0.00221827, 0.864219, -0.503115, 0.000919015, 0.000321808, 0.00237944, 0.999997, -2.26132, 2.4558, 10.5)
+mesh = SubResource("BoxMesh_ku55b")
+skeleton = NodePath("../..")
+
+[node name="Gemälde" type="Node3D" parent="."]
+transform = Transform3D(-3, 0, -2.62268e-07, 0, 3, 0, 2.62268e-07, 0, -3, 5, -0.782827, 21.5225)
+
+[node name="Gemälde01" parent="Gemälde" instance=ExtResource("3_82e4p")]
+
+[node name="Schild" parent="Gemälde/Gemälde01" instance=ExtResource("4_6u78v")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.96046e-07, -0.01908, -1.53812)
+
+[node name="Gemälde02" parent="Gemälde" instance=ExtResource("4_nobm7")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.33333, 0.196584, 0)
+
+[node name="Schild" parent="Gemälde/Gemälde02" instance=ExtResource("5_t0buc")]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 0, -0.68271, -0.00456238)
+
+[node name="Gemälde03" parent="Gemälde" instance=ExtResource("5_j2q2n")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 0, -6.10334)
+
+[node name="Schild" parent="Gemälde/Gemälde03" instance=ExtResource("9_kax1e")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -1.42914)
+
+[node name="Schild" parent="." instance=ExtResource("10_mhygb")]
+transform = Transform3D(-2, 0, -1.74846e-07, 0, 2, 0, 1.74846e-07, 0, -2, 0.0326493, 2.58884, 10.0001)
