@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjw7kpcwkoyp1"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_43gdy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3iuau"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0ar21"]
+lightmap_size_hint = Vector2i(17, 14)
+add_uv2 = true
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_43gdy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_3iuau")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_0ar21")
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.655, 0)
+
+[node name="Camera3D" type="Camera3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000426054, 0)
+current = true
+fov = 90.0
